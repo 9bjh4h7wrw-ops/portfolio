@@ -47,7 +47,7 @@ body {
     }
   }
   &__text {
-    margin-left: 10px;
+    margin: 0 auto;
     font-size: 16px;
     letter-spacing: 0.01em;
     color: color.$white;
@@ -154,14 +154,14 @@ body {
   &__head-main {
     font-size: 35px;
     letter-spacing: 0.1em;
-    color:color.$cl-main;
+    color: color.$cl-main;
     padding: 0.1em 0;
     margin: 12px 0;
     border-top: solid 2px black;
-  border-bottom: solid 2px black;
+    border-bottom: solid 2px black;
   }
 
-  &__head-main-footer{
+  &__head-main-footer {
     font-size: 35px;
     letter-spacing: 0.1em;
     color: color.$white;
@@ -344,12 +344,12 @@ body {
   font-size: 15px;
   font-weight: normal;
   letter-spacing: normal;
- 
+
   /* 大きさ */
   width: 60px;
   height: 60px;
-  background:none;
-  border:none;
+  background: none;
+  border: none;
 }
 // ------------------------------
 // pc
@@ -505,7 +505,7 @@ body {
   .section {
     &__head-main {
       font-size: 48px;
-      &-footer{
+      &-footer {
         font-size: 41px;
       }
     }
