@@ -1,21 +1,39 @@
-// ハンバーガーボタンとドロワー
+// Hamburger menu
 jQuery("#js-button-drawer").on("click", function () {
-  $(this).toggleClass("is-checked");
-  $("#js-drawer").slideToggle();
-  $("body").toggleClass("is-fixed");
+  jQuery(this).toggleClass("is-checked");
+  jQuery("#js-drawer").slideToggle(280);
+  jQuery("body").toggleClass("is-fixed");
 });
 
-// topへ戻る
+// Close drawer when nav link clicked (mobile)
+jQuery("#js-drawer .header__nav-link").on("click", function () {
+  if (jQuery(window).width() < 768) {
+    jQuery("#js-button-drawer").removeClass("is-checked");
+    jQuery("#js-drawer").slideUp(280);
+    jQuery("body").removeClass("is-fixed");
+  }
+});
+
+// Back to top
 jQuery("#js-button-top").on("click", function () {
-  jQuery("html,body").animate({ scrollTop: 0 }, 500);
+  jQuery("html, body").animate({ scrollTop: 0 }, 500);
 });
 
-// topボタンをトップから80pxスクロールしたら300msかけて表示する
-const topbtn = jQuery("#js-button-top");
+// Show/hide back to top button
+const $topBtn = jQuery("#js-button-top");
 jQuery(window).on("scroll", function () {
   if (jQuery(this).scrollTop() > 80) {
-    topbtn.fadeIn(300);
+    $topBtn.fadeIn(300);
   } else {
-    topbtn.fadeOut(300);
+    $topBtn.fadeOut(300);
+  }
+});
+
+// On desktop resize: reset mobile menu state
+jQuery(window).on("resize", function () {
+  if (jQuery(window).width() >= 768) {
+    jQuery("#js-drawer").removeAttr("style");
+    jQuery("#js-button-drawer").removeClass("is-checked");
+    jQuery("body").removeClass("is-fixed");
   }
 });
